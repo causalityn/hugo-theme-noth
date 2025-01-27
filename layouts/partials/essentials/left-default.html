@@ -1,0 +1,45 @@
+<div class="w-full">
+  <!--  Basic Information -->
+  <div class="my-12">
+    <div class="font-cserif text-xl"><a>{{ .Site.Param "author" }}</a></div>
+    <div class="font-cserif text-sm text-gray-500">
+      {{ .Site.Param "motto" }}
+    </div>
+  </div>
+
+  <!--  Categories  -->
+  <div class="mb-8">
+    <p class="font-cserif text-lg font-bold">分类/Categories</p>
+    <ul class="flex flex-wrap justify-end space-x-4">
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <li class="font-cserif hover:text-blue-400">
+        <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!--  Tags  -->
+  <div class="my-8">
+    <p class="font-cserif text-lg font-bold">标签/Tags</p>
+    <ul class="flex flex-wrap justify-end space-x-4">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li class="font-cserif hover:text-blue-400">
+        <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!--  Series  -->
+  <div>
+    <p class="font-cserif text-lg font-bold">系列文章/Series</p>
+    <ul class="flex flex-wrap justify-end space-x-4">
+      {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+      <li class="font-cserif hover:text-blue-400">
+        <a href="{{ $taxonomy.Page.RelPermalink }}">{{ $name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

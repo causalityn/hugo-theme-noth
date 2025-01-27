@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "markdown.css";
+@theme {
+  --color-light-primary: #fafafa;
+  --color-light-secondary: #eaeaea;
+  --color-light-accent: #71c4ef;
+  --color-light-contrast: #1c1c1c;
+  --color-dark-primary: #1c1c1c;
+  --color-dark-secondary: #2c2c2c;
+  --color-dark-accent: #71c4ef;
+  --color-dark-contrast: #fafafa;
+
+  --font-cserif: "Times New Roman", "Noto Serif SC", "Songti SC", "serif";
+  --font-title: "Times New Roman", "Noto Serif SC", "Songti SC", "serif";
+  --font-main: "Times New Roman", "Noto Serif SC", "Songti SC", "serif";
+}
+
+@layer components {
+  .timeline {
+    border-left: 0.2rem solid #e5e7eb;
+    /* 灰色边线 */
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .timeline .year-node .dot,
+  .timeline .article-node .dot {
+    position: absolute;
+    left: -0.6rem;
+    /* 根据需求调整点的位置 */
+  }
+}

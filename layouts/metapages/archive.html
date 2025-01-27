@@ -1,0 +1,35 @@
+{{ define "main" }}
+<!--  left side  -->
+<aside class="bg-background-100 fixed hidden h-full w-72 p-4 text-right shadow-xl lg:block">
+  {{ partial "essentials/left-default.html" . }}
+</aside>
+
+<!--  content  -->
+<main class="flex-grow p-4 lg:ml-80">
+  <h1 class="my-8 text-center text-2xl">归档 ｜ archive</h1>
+
+  {{ $pages := .Site.RegularPages}} {{ $postsByYear := $pages.GroupByPublishDate
+  "January 2006" }}
+  <div class="relative mx-auto w-1/2 border-l border-solid border-gray-100">
+    {{ range $postsByYear }}
+    <!-- 年份节点 -->
+    <div class="mb-4 flex items-center">
+      <div class="absolute -left-2 h-4 w-4 rounded-full bg-gray-400"></div>
+      <div class="year-text ml-4 font-bold text-gray-500">{{ .Key }}</div>
+    </div>
+
+    <!-- 文章节点 -->
+    {{ range .Pages }}
+    <div class="mb-6 flex items-center">
+      <div class="absolute -left-2 mx-0.5 h-3 w-3 rounded-full bg-gray-200"></div>
+      <div class="article-info ml-4">
+        <p class="mt-4 text-sm text-gray-400">
+          {{ .Date.Format "2006-01-02" }}
+        </p>
+        <a href="{{ .RelPermalink }}" class="text-lg text-gray-500 hover:underline">{{ .Title }}</a>
+      </div>
+    </div>
+    {{ end }} {{ end }}
+  </div>
+</main>
+{{ end }}

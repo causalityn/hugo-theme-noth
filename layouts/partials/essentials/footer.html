@@ -1,0 +1,21 @@
+<span class="font-cserif text-lg">
+  <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.</p>
+</span>
+<!--<span class="font-serif text-lg">-->
+<!--    Powered By <a href="https://gohugo.io/" class="font-bold hover:text-blue-400" target="_blank">Hugo</a>-->
+<!--    with theme <a href="https://github.com/xydmyx/hugo-theme-noth/" class="font-bold hover:text-blue-400" target="_blank">Noth</a>-->
+<!--</span>-->
+{{ with .Site.Params.beian }}
+<span class="font-cserif text-lg">
+  <a href="https://beian.miit.gov.cn" class="hover:text-blue-400" target="_blank">{{ . }}</a>
+</span>
+
+<!-- js -->
+{{- with resources.Get "js/main.js" }} {{- if eq hugo.Environment "development"
+}} {{- with . | js.Build }}
+<script src="{{ .RelPermalink }}"></script>
+{{- end }} {{- else }} {{- $opts := dict "minify" true }} {{- with . | js.Build
+$opts | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }} {{- end }} {{- end }}
+{{ end }}

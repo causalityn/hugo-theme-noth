@@ -1,0 +1,29 @@
+{
+  "name": "hugo-theme-noth",
+  "version": "0.0.1",
+  "description": "A theme for hugo.",
+  "scripts": {
+    "dev:hugo": "hugo server -D --configDir ./exampleSite/config",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/causalityn/hugo-theme-noth.git"
+  },
+  "keywords": [
+    "hugo",
+    "tailwindcss"
+  ],
+  "author": "causalityn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/causalityn/hugo-theme-noth/issues"
+  },
+  "homepage": "https://github.com/causalityn/hugo-theme-noth#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.0"
+  }
+}

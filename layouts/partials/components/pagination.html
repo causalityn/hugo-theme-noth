@@ -1,0 +1,38 @@
+<div class="my-8 flex justify-center">
+  <nav class="flex items-center space-x-2">
+    <a href="{{ .Paginator.First.URL }}"
+      class="flex h-8 w-8 items-center justify-center rounded text-black hover:text-blue-400">
+      ⋘
+    </a>
+
+    <a href="{{ if .Paginator.HasPrev }} {{ .Paginator.Prev.URL }} {{ else }}javascript:void(0);{{ end }}"
+      class="flex h-8 w-8 items-center justify-center rounded text-black hover:text-blue-400">
+      <
+    </a>
+
+    {{ $currentPageNumber := .Paginator.PageNumber }} 
+    {{ range .Paginator.Pagers}}
+    {{ if eq $currentPageNumber .PageNumber }}
+    <a href="{{ .URL }}"
+      class="flex h-8 w-8 items-center justify-center rounded bg-gray-700 text-white hover:text-blue-400">
+      {{ .PageNumber }}
+    </a>
+    {{ else }}
+    <a href="{{ .URL }}"
+      class="flex h-8 w-8 items-center justify-center rounded border bg-gray-800 text-black hover:text-blue-400">
+      {{ .PageNumber }}
+    </a>
+    {{ end }}
+    {{ end }}
+
+    <a href="{{ if .Paginator.HasNext }} {{ .Paginator.Next.URL }} {{ else }}javascript:void(0);{{ end }}"
+      class="flex h-8 w-8 items-center justify-center rounded text-black hover:text-blue-400">
+      >
+    </a>
+
+    <a href="{{ .Paginator.Last.URL }}"
+      class="flex h-8 w-8 items-center justify-center rounded text-black hover:text-blue-400">
+      ⋙
+    </a>
+  </nav>
+</div>

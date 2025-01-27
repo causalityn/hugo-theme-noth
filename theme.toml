@@ -1,0 +1,16 @@
+name = 'Noth'
+license = 'MIT'
+licenselink = 'https://github.com/causalityn/hugo-theme-noth/LICENSE'
+description = 'A Theme for Hugo.'
+
+homepage = 'https://github.com/causalityn/hugo-theme-noth'
+
+demosite = 'https://causalityn.github.io/'
+
+tags = ['blog']
+features = ['tailwindcss']
+
+[author]
+  name = 'causalityn'
+  homepage = 'https://causalityn.site/'
+

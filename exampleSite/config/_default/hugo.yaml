@@ -1,0 +1,23 @@
+baseURL: https://example.com
+languageCode: "en-US"
+title: "Noth"
+
+contentDir: exampleSite/content
+
+summaryLength: 10
+hasCJKLanguage: true
+
+taxonomies:
+  tag: tags
+  category: categories
+  serie: series
+
+build:
+  cachebusters:
+    - source: layouts/.*
+      target: css
+
+module:
+  hugoVersion:
+    extended: false
+    min: "0.116.0"

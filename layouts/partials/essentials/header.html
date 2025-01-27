@@ -1,0 +1,14 @@
+<header
+  class="fixed top-0 z-50 mx-auto flex w-full items-center justify-between bg-white p-2 shadow-md lg:px-8"
+  aria-label="Global">
+  <a href="{{ .Site.BaseURL }}" class="-m-1.5 p-1.5">
+    <span class="h-8 w-auto font-title text-2xl">{{ .Site.Title }}</span>
+    <!-- <img class="h-8 w-auto" src="https://tailwindui.starxg.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+            alt="{{ .Site.Title }}"> -->
+  </a>
+  <nav class="flex gap-x-12">
+    {{ with site.Menus.main }} {{ range . }}
+    <a href="{{ .URL }}" class="text-sm/6 font-cserif font-bold text-gray-900">{{ .Name }}</a>
+    {{ end }} {{ end }}
+  </nav>
+</header>

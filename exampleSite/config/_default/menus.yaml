@@ -1,0 +1,10 @@
+main:
+  - name: "Home"
+    pageRef: "/"
+    weight: 1
+  - name: "Archive"
+    pageRef: "/archive"
+    weight: 100
+  - name: "About"
+    pageRef: "/about"
+    weight: 101
